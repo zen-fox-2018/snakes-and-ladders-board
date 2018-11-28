@@ -8,9 +8,23 @@ function generateBoard(num){
       fillResult.push(total);
       total--;
     }
-    result.push(fillResult.reverse());
+    if (num %2 === 0){
+      if (i % 2 === 1) {
+        result.push(fillResult.reverse());
+      } else {
+        result.push(fillResult);
+      }
+    }
+    else{
+      if (i % 2 === 1) {
+        result.push(fillResult);
+      } else {
+        result.push(fillResult.reverse());
+      }
+    }
   }
   return result
 }
 
 console.log(generateBoard(15));
+console.log(generateBoard(8));
