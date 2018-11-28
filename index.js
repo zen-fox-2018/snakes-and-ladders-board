@@ -8,7 +8,7 @@ function generateBoard(num){
       fillResult.push(total);
       total--;
     }
-    result.push(fillResult);
+    result.push(fillResult.reverse());
   }
   return result
 }
