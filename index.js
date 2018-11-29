@@ -5,28 +5,14 @@ function generateBoard(size) {
     let unshift = size-1
     let innerArray = []
     for (let j = 0; j < size; j++) {
-      if (size % 2 === 0) {
-        if (i % 2 === 0) {
-          innerArray.push(count)
-          count--
-        }
-        else {
-          innerArray[unshift] = count
-          count--
-          unshift--
-        }
+      if ((size % 2 === 0 && i % 2 != 0) || (size % 2 !== 0 && i % 2 == 0)) {
+        innerArray[unshift] = count
+        unshift--
       }
       else {
-        if (i % 2 !== 0) {
-          innerArray.push(count)
-          count--
-        }
-        else {
-          innerArray[unshift] = count
-          count--
-          unshift--
-        }
+        innerArray.push(count)
       }
+      count--
     }
     array.push(innerArray)
   }
